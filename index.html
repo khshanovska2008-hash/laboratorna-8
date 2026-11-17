@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="page">
+
+        <header class="header">
+            <h1>ToDo List</h1>
+        </header>
+
+        <section class="todo" aria-label="Список завдань">
+
+            <form id="todoForm" class="add-form">
+                <input
+                    id="taskInput"
+                    type="text"
+                    maxlength="250"
+                    placeholder="Додайте завдання"
+                    aria-label="Нове завдання"
+                    required
+                    autocomplete="off"
+                >
+
+                <button
+                    class="add-button"
+                    type="submit"
+                    aria-label="Додати завдання"
+                >+</button>
+            </form>
+
+            <nav class="filters" aria-label="Фільтрація завдань">
+
+                <button
+                    type="button"
+                    class="filter active"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    Усі
+                </button>
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="active"
+                    aria-pressed="false"
+                >
+                    Невиконані
+                </button>
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="completed"
+                    aria-pressed="false"
+                >
+                    Виконані
+                </button>
+
+            </nav>
+
+            <p id="formMessage" class="form-message" role="status"></p>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <p id="emptyMessage" class="empty-message">
+                Поки немає завдань. Додай перше вище.
+            </p>
+
+        </section>
+
+        <section class="statistics" aria-label="Статистика">
+
+            <span id="totalCount">
+                Усього завдань: 0
+            </span>
+
+            <span id="activeCount">
+                Невиконаних: 0
+            </span>
+
+            <span id="completedCount">
+                Виконаних: 0
+            </span>
+
+        </section>
+
+        <p class="note">
+            Enter — додати або зберегти ·
+            Подвійний клік — редагувати ·
+            Esc — скасувати.
+            Дані зберігаються в браузері.
+        </p>
+
+    </main>
+
+</body>
+</html>

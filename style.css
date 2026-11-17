@@ -1,0 +1,251 @@
+
+:root {
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #dfe4ed;
+    --text: #222222;
+    --muted: #767676;
+    --accent: #3462cf;
+    --accent-bg: #eef2fc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.page {
+    max-width: 670px;
+    margin: 0 auto;
+    padding: 30px 18px 60px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+h1 {
+    margin: 0 0 2px;
+    font-size: clamp(36px, 7vw, 48px);
+    line-height: 1.25;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.todo {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.add-form {
+    display: flex;
+    gap: 8px;
+    padding: 9px;
+    border-bottom: 1px solid var(--border);
+}
+
+#taskInput {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #c8cfdb;
+    border-radius: 4px;
+    background: #fff;
+    font: inherit;
+    outline-color: var(--accent);
+}
+
+.add-button {
+    min-width: 42px;
+    font: 24px/1 Arial, sans-serif;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    color: #fff;
+    background: var(--accent);
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--border);
+}
+
+.filter {
+    min-width: 0;
+    padding: 10px 4px;
+    border: 0;
+    border-right: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.filter:last-child {
+    border-right: 0;
+}
+
+.filter.active {
+    color: var(--accent);
+    background: var(--accent-bg);
+    font-weight: 700;
+}
+
+.filter:hover:not(.active) {
+    background: #f5f7fc;
+}
+
+.task-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 57px;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.task-checkbox {
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.task-text {
+    overflow-wrap: anywhere;
+    cursor: text;
+    font-weight: 500;
+}
+
+.task-date {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.task-item.completed .task-text {
+    color: #989da6;
+    text-decoration: line-through;
+}
+
+.task-item.completed .task-date {
+    color: #a2a6af;
+}
+
+.task-edit {
+    width: 100%;
+    min-width: 0;
+    padding: 5px 7px;
+    font: inherit;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    outline: none;
+}
+
+.delete-button {
+    flex: 0 0 auto;
+    width: 27px;
+    height: 27px;
+    padding: 0;
+    border: 1px solid #db6870;
+    border-radius: 50%;
+    color: #cc4651;
+    background: white;
+    font: bold 19px/1 Arial, sans-serif;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    color: white;
+    background: #cc4651;
+}
+
+.form-message {
+    margin: 0;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.form-message:not(:empty) {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.empty-message {
+    margin: 0;
+    padding: 21px 12px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.empty-message[hidden] {
+    display: none;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: 14px;
+    padding: 11px 13px;
+    border-radius: 5px;
+    background: var(--accent-bg);
+    color: #3d4c6d;
+    font-size: 13px;
+}
+
+.note {
+    margin: 12px 2px 0;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+}
+
+@media (max-width: 460px) {
+    .page {
+        padding: 24px 12px 50px;
+    }
+
+    .statistics {
+        justify-content: flex-start;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+}
